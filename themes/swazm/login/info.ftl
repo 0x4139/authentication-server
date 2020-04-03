@@ -20,20 +20,30 @@
             </p>
             <hr>
             <br>
-            <div class="text-center">
-                <div class="text-center"><small class="mr-25">${msg("noAccount")}</small><a class="text-info"
-                                                                                            href="${url.registrationUrl}"><small>${msg("doRegister")}</small></a></div>
-                <#if skipLink??>
-                <#else>
-                    <#if pageRedirectUri?has_content>
-                        <p><a href="${pageRedirectUri}">${kcSanitize(msg("backToApplication"))?no_esc}</a></p>
-                    <#elseif actionUri?has_content>
-                        <p><a href="${actionUri}">${kcSanitize(msg("proceedWithAction"))?no_esc}</a></p>
-                    <#elseif (client.baseUrl)?has_content>
-                        <p><a href="${client.baseUrl}">${kcSanitize(msg("backToApplication"))?no_esc}</a></p>
-                    </#if>
-                </#if>
 
+            <div class="text-center">
+                <div class="text-center">
+                    <#if skipLink??>
+                    <#else>
+                        <#if pageRedirectUri?has_content>
+
+                            <p>
+                                <a class="text-info"
+                                   href="${url.pageRedirectUri}"><small>${kcSanitize(msg("backToApplication"))?no_esc}</small></a>
+                            </p>
+                        <#elseif actionUri?has_content>
+                            <p>
+                                <a class="text-info"
+                                   href="${url.actionUri}"><small>${kcSanitize(msg("proceedWithAction"))?no_esc}</small></a>
+                            </p>
+                        <#elseif (client.baseUrl)?has_content>
+                            <p>
+                                <a class="text-info"
+                                  href="${url.baseUrl}"><small>${kcSanitize(msg("backToApplication"))?no_esc}</small></a>
+                            </p>
+                        </#if>
+                    </#if>
+                </div>
 
             </div>
 
