@@ -1,0 +1,44 @@
+/* toast css */
+/* ----------*/
+/* toast container opacity */
+#toast-container > div
+{
+    max-width: none; 
+
+    opacity: .9;
+
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=90);
+    filter: alpha(opacity=90);
+}
+
+/* toast container hover shadow */
+.toast-container > div
+{
+    box-shadow: none !important;
+}
+
+/* toast background colors starts */
+.toast
+{
+    background-color: #1767b2;
+}
+
+.toast-success
+{
+    background-color: #2baef7;
+}
+
+.toast-error
+{
+    background-color: #f42c2c;
+}
+
+.toast-info
+{
+    background-color: #21c4ff;
+}
+
+.toast-warning
+{
+    background-color: #f4a32c;
+}
