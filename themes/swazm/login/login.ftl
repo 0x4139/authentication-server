@@ -31,14 +31,13 @@
                         </div>
                         <div class="container ${properties.kcFormGroupClass!} ${properties.kcFormSettingClass!}">
                             <div class="form-group row">
-                                <div class="pull-left text-left col-6">
+                                <div class="pull-left  text-left col-6 p-0">
                                     <#if realm.rememberMe && !usernameEditDisabled??>
                                         <div class="checkbox checkbox-sm">
                                             <#if login.rememberMe??>
                                                 <input class="form-check-input" tabindex="3" id="rememberMe"
                                                        name="rememberMe" type="checkbox" checked>
-                                                <label class="checkboxsmall"
-                                                       for="rememberMe"><small>${msg("rememberMe")}</small></label>
+                                                <label class="checkboxsmall" for="rememberMe"><small>${msg("rememberMe")}</small></label>
 
                                             <#else>
                                                 <input class="form-check-input" tabindex="3" id="rememberMe"
@@ -50,7 +49,7 @@
                                     </#if>
                                 </div>
 
-                                <div class="pull-right text-right col-6 ${properties.kcFormOptionsWrapperClass!}">
+                                <div class="pull-right text-right p-0 col-6 ${properties.kcFormOptionsWrapperClass!}">
                                     <#if realm.resetPasswordAllowed>
                                         <a  tabindex="5" class="card-link text-info"
                                            href="${url.loginResetCredentialsUrl}"><small>${msg("doForgotPassword")}</small></a>
@@ -74,7 +73,7 @@
             <#if realm.password && social.providers??>
                 <div class="divider">
                     <div class="divider-text text-uppercase text-muted"><small>or login with
-                            email</small>
+                            social</small>
                     </div>
                 </div>
                 <div class="container">
@@ -83,7 +82,7 @@
                         <#list social.providers as p>
                             <div class="col-12 col-sm-6 mt-1">
                                 <a href="${p.loginUrl}" class="btn text-center btn-social btn-${p.alias} col-12">
-                                    <i class="bx bxl-google font-medium-3"></i><span
+                                    <i class="bx bxl-${p.alias} font-medium-3"></i><span
                                             class="pl-50 text-center">${p.displayName}</span>
                                 </a>
                             </div>
